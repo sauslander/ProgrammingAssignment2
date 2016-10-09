@@ -4,7 +4,7 @@
 ## This function is going to create a matrix object and cache the inverse of the matrix object.
 
 makeCacheMatrix <- function(x = matrix()) {
-## First section of code assigns value to the matrix x outside the current environment in the console
+    ## First section of code assigns value to the matrix x outside the current environment in the console
   
     i <- NULL
     set <- function(y) {
@@ -14,7 +14,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
     get <- function() x
  
-## Using solve function to find inverse for a square matrix
+    ## Using solve function to find inverse for a square matrix
   
   setinverse <- function(solve) i <<- solve
   getinverse <- function() i
@@ -28,7 +28,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## If the inverse has not been found then cacheSolve will find and return the inverse matrix.
 
 cacheSolve <- function(x, ...) {
-## Looks for a cache Matrix and returns its inverse if found
+    ## Looks for a cache Matrix and returns its inverse if found
   
     i <- x$getinverse()
     if(!is.null(i)){
@@ -36,7 +36,7 @@ cacheSolve <- function(x, ...) {
           return(i)
     }
 
-## If a Matrix is not found then calculate the inverse of the Matrix given
+    ## If a Matrix is not found then calculate the inverse of the Matrix given
     
     data <- x$get()
     i <- solve(data, ...)
